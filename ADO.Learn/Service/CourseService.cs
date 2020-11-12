@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace ADO.Learn
 {
@@ -54,9 +56,44 @@ namespace ADO.Learn
         }
 
         
-        public SqlDataReader QueryCourseById()
-        {
+        public List<Course> QueryCourseById(int courseId) {
+            string sql = $"select CourseId, CourseName,CourseContent,ClassHour, CategoryId, Credit, TeacherId from Course where CourseId<{courseId} ";
 
+            SqlDataReader result = SQLHelper.GetReader(sql);
+
+            List<Course> list = new List<Course>();
+
+
+
+            //判断是否有查询结果，来决定输出数据
+
+            while (result.Read())
+            {
+                //Course myCourse = new Course()
+                //{
+                //    CourseName = result["CourseName"].ToString(),
+                //    CourseContent = result["CourseContent"].ToString(),
+                //    ClassHour = Convert.ToInt32(result["ClassHour"]),
+                //    CategoryId = (int)result["CategoryId"],
+                //    TeacherId = (int)result["TeacherId"],
+                //    Credit = (int)result["Credit"]
+                //};
+
+                //list.Add(myCourse);
+
+                list.Add(new Course() {
+                    CourseName = result["CourseName"].ToString(),
+                    CourseContent = result["CourseContent"].ToString(),
+                    ClassHour = Convert.ToInt32(result["ClassHour"]),
+                    CategoryId = (int)result["CategoryId"],
+                    TeacherId = (int)result["TeacherId"],
+                    Credit = (int)result["Credit"],
+                    CourseId = (int)result["CourseId"]
+                });
+            }
+
+            result.Close();
+            return list;
         }
     }
 }

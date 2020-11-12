@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 //引用需要的命名空间
 using System.Data.SqlClient;
@@ -20,7 +21,8 @@ namespace ADO.Learn
             //AddCourse();
             //DeleteCourse();
             //UpdateCourse();
-            GetCourseCount();
+            //GetCourseCount();
+            QueryCourseById();
         }
 
         //插入数据
@@ -273,6 +275,17 @@ namespace ADO.Learn
         static void GetCourseCount()
         {
             Console.WriteLine(new CourseService().GetCourseCount());
+        }
+
+        // 
+        public static void QueryCourseById()
+        {
+            List<Course> coursesList = new CourseService().QueryCourseById(10020);
+
+            foreach (var item in coursesList)
+            {
+                Console.WriteLine(item.CourseId + "\t" + item.CourseName + "\t" +item.ClassHour + "\t");
+            }
         }
         #endregion
     }
