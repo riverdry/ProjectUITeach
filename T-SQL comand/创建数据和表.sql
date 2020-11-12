@@ -19,7 +19,7 @@ on primary
 	--数据库的逻辑文件名
 	name = "CourseManageDB_data",
 	--数据库物理文件名（绝对路径）
-	filename="E:\SQLData\CourseManageDB_data.mdf",
+	filename="D:\SQLData\CourseManageDB_data.mdf",
 	--数据库初始文件大小（根据实际生产需求来定）
 	size = 10MB,
 	--数据文件增值量
@@ -30,7 +30,7 @@ on primary
 
     
 	name = "CourseManageDB_data1",
-	filename="E:\SQLData\CourseManageDB_data.ndf",	
+	filename="D:\SQLData\CourseManageDB_data.ndf",	
 	size = 10MB,
 	filegrowth = 1MB
 
@@ -38,7 +38,7 @@ on primary
 log on 
 (
 	name = "CourseManageDB_log",
-	filename="E:\SQLData\CourseMangeDB_data.ldf",	
+	filename="D:\SQLData\CourseMangeDB_data.ldf",	
 	size = 10MB,
 	filegrowth = 1MB
 )
@@ -129,10 +129,10 @@ values('.net开发'),('.net开发'),('.net开发')
 select * from CourseCategory
 --添加课程
 insert into Course(CourseName,CourseContent,ClassHour,Credit,CategoryId,TeacherId)
-values('。Net上位机开发','上位机开发课程的王牌','10','3','10001','10001')
+values('。Net上位机开发','上位机开发课程的王牌','10','3','10001','10001')S
 
 
-select CourseName,CourseContent,ClassHour,Credit,Course.CategoryId,CategoryName,Course.TeacherId from Course 
+select CourseId, CourseName,CourseContent,ClassHour,Credit,Course.CategoryId,CategoryName,Course.TeacherId from Course 
 inner join CourseCategory on Course.CategoryId = CourseCategory.CategoryId
 
 
