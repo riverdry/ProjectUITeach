@@ -97,5 +97,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CourseManageBLL\CourseManageBLL.csproj">
+      <Project>{2568890d-143f-4ce5-a26d-e3e2e59d225b}</Project>
+      <Name>CourseManageBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CourseManageModels\CourseManageModels.csproj">
+      <Project>{c3ebe8d7-9a22-4d3f-8633-496dae95ef0f}</Project>
+      <Name>CourseManageModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
