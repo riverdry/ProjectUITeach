@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.btnAddCourse = new System.Windows.Forms.Button();
-            this.btnCourseManage = new System.Windows.Forms.Button();
-            this.btnTeacherManage = new System.Windows.Forms.Button();
-            this.btnModifyPwd = new System.Windows.Forms.Button();
-            this.lblCurrentUser = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblCurrentUser = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnModifyPwd = new System.Windows.Forms.Button();
+            this.btnTeacherManage = new System.Windows.Forms.Button();
+            this.btnCourseManage = new System.Windows.Forms.Button();
+            this.btnAddCourse = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,112 +54,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(921, 66);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(109)))), ((int)(((byte)(176)))));
-            this.panel2.Controls.Add(this.btnModifyPwd);
-            this.panel2.Controls.Add(this.btnTeacherManage);
-            this.panel2.Controls.Add(this.btnCourseManage);
-            this.panel2.Controls.Add(this.btnAddCourse);
-            this.panel2.Controls.Add(this.monthCalendar1);
-            this.panel2.Location = new System.Drawing.Point(4, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 470);
-            this.panel2.TabIndex = 1;
-            this.panel2.TabStop = true;
-            // 
-            // panelRight
-            // 
-            this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(109)))), ((int)(((byte)(176)))));
-            this.panelRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelRight.BackgroundImage")));
-            this.panelRight.Location = new System.Drawing.Point(227, 67);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(690, 470);
-            this.panelRight.TabIndex = 1;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 2);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            // 
-            // btnAddCourse
-            // 
-            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnAddCourse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCourse.Image")));
-            this.btnAddCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCourse.Location = new System.Drawing.Point(35, 192);
-            this.btnAddCourse.Name = "btnAddCourse";
-            this.btnAddCourse.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnAddCourse.Size = new System.Drawing.Size(151, 32);
-            this.btnAddCourse.TabIndex = 0;
-            this.btnAddCourse.Text = "添加课程信息";
-            this.btnAddCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddCourse.UseVisualStyleBackColor = false;
-            // 
-            // btnCourseManage
-            // 
-            this.btnCourseManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnCourseManage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnCourseManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCourseManage.Image = ((System.Drawing.Image)(resources.GetObject("btnCourseManage.Image")));
-            this.btnCourseManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCourseManage.Location = new System.Drawing.Point(35, 246);
-            this.btnCourseManage.Name = "btnCourseManage";
-            this.btnCourseManage.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnCourseManage.Size = new System.Drawing.Size(151, 32);
-            this.btnCourseManage.TabIndex = 0;
-            this.btnCourseManage.Text = "课程信息管理";
-            this.btnCourseManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCourseManage.UseVisualStyleBackColor = false;
-            // 
-            // btnTeacherManage
-            // 
-            this.btnTeacherManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnTeacherManage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnTeacherManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeacherManage.Image = ((System.Drawing.Image)(resources.GetObject("btnTeacherManage.Image")));
-            this.btnTeacherManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTeacherManage.Location = new System.Drawing.Point(35, 301);
-            this.btnTeacherManage.Name = "btnTeacherManage";
-            this.btnTeacherManage.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnTeacherManage.Size = new System.Drawing.Size(151, 32);
-            this.btnTeacherManage.TabIndex = 0;
-            this.btnTeacherManage.Text = "讲师信息管理";
-            this.btnTeacherManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTeacherManage.UseVisualStyleBackColor = false;
-            // 
-            // btnModifyPwd
-            // 
-            this.btnModifyPwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnModifyPwd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.btnModifyPwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyPwd.Image = ((System.Drawing.Image)(resources.GetObject("btnModifyPwd.Image")));
-            this.btnModifyPwd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModifyPwd.Location = new System.Drawing.Point(35, 408);
-            this.btnModifyPwd.Name = "btnModifyPwd";
-            this.btnModifyPwd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.btnModifyPwd.Size = new System.Drawing.Size(151, 32);
-            this.btnModifyPwd.TabIndex = 0;
-            this.btnModifyPwd.Text = "更改登录密码";
-            this.btnModifyPwd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModifyPwd.UseVisualStyleBackColor = false;
-            // 
-            // lblCurrentUser
-            // 
-            this.lblCurrentUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCurrentUser.Image = ((System.Drawing.Image)(resources.GetObject("lblCurrentUser.Image")));
-            this.lblCurrentUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblCurrentUser.Location = new System.Drawing.Point(786, 32);
-            this.lblCurrentUser.Name = "lblCurrentUser";
-            this.lblCurrentUser.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.lblCurrentUser.Size = new System.Drawing.Size(110, 20);
-            this.lblCurrentUser.TabIndex = 0;
-            this.lblCurrentUser.Text = "你好世界";
-            this.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnClose
             // 
@@ -178,6 +72,114 @@
             this.btnClose.Text = "×";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblCurrentUser
+            // 
+            this.lblCurrentUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCurrentUser.Image = ((System.Drawing.Image)(resources.GetObject("lblCurrentUser.Image")));
+            this.lblCurrentUser.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCurrentUser.Location = new System.Drawing.Point(786, 32);
+            this.lblCurrentUser.Name = "lblCurrentUser";
+            this.lblCurrentUser.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblCurrentUser.Size = new System.Drawing.Size(110, 20);
+            this.lblCurrentUser.TabIndex = 0;
+            this.lblCurrentUser.Text = "你好世界";
+            this.lblCurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(109)))), ((int)(((byte)(176)))));
+            this.panel2.Controls.Add(this.btnModifyPwd);
+            this.panel2.Controls.Add(this.btnTeacherManage);
+            this.panel2.Controls.Add(this.btnCourseManage);
+            this.panel2.Controls.Add(this.btnAddCourse);
+            this.panel2.Controls.Add(this.monthCalendar1);
+            this.panel2.Location = new System.Drawing.Point(4, 67);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(220, 470);
+            this.panel2.TabIndex = 1;
+            this.panel2.TabStop = true;
+            // 
+            // btnModifyPwd
+            // 
+            this.btnModifyPwd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnModifyPwd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnModifyPwd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyPwd.Image = ((System.Drawing.Image)(resources.GetObject("btnModifyPwd.Image")));
+            this.btnModifyPwd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModifyPwd.Location = new System.Drawing.Point(35, 408);
+            this.btnModifyPwd.Name = "btnModifyPwd";
+            this.btnModifyPwd.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnModifyPwd.Size = new System.Drawing.Size(151, 32);
+            this.btnModifyPwd.TabIndex = 0;
+            this.btnModifyPwd.Text = "更改登录密码";
+            this.btnModifyPwd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModifyPwd.UseVisualStyleBackColor = false;
+            // 
+            // btnTeacherManage
+            // 
+            this.btnTeacherManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnTeacherManage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnTeacherManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTeacherManage.Image = ((System.Drawing.Image)(resources.GetObject("btnTeacherManage.Image")));
+            this.btnTeacherManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTeacherManage.Location = new System.Drawing.Point(35, 301);
+            this.btnTeacherManage.Name = "btnTeacherManage";
+            this.btnTeacherManage.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnTeacherManage.Size = new System.Drawing.Size(151, 32);
+            this.btnTeacherManage.TabIndex = 0;
+            this.btnTeacherManage.Text = "讲师信息管理";
+            this.btnTeacherManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTeacherManage.UseVisualStyleBackColor = false;
+            // 
+            // btnCourseManage
+            // 
+            this.btnCourseManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnCourseManage.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnCourseManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCourseManage.Image = ((System.Drawing.Image)(resources.GetObject("btnCourseManage.Image")));
+            this.btnCourseManage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCourseManage.Location = new System.Drawing.Point(35, 246);
+            this.btnCourseManage.Name = "btnCourseManage";
+            this.btnCourseManage.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnCourseManage.Size = new System.Drawing.Size(151, 32);
+            this.btnCourseManage.TabIndex = 0;
+            this.btnCourseManage.Text = "课程信息管理";
+            this.btnCourseManage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCourseManage.UseVisualStyleBackColor = false;
+            this.btnCourseManage.Click += new System.EventHandler(this.btnCourseManage_Click);
+            // 
+            // btnAddCourse
+            // 
+            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnAddCourse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
+            this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCourse.Image")));
+            this.btnAddCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddCourse.Location = new System.Drawing.Point(35, 192);
+            this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.btnAddCourse.Size = new System.Drawing.Size(151, 32);
+            this.btnAddCourse.TabIndex = 0;
+            this.btnAddCourse.Text = "添加课程信息";
+            this.btnAddCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddCourse.UseVisualStyleBackColor = false;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 2);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
+            // panelRight
+            // 
+            this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(109)))), ((int)(((byte)(176)))));
+            this.panelRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelRight.BackgroundImage")));
+            this.panelRight.Location = new System.Drawing.Point(227, 67);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(690, 470);
+            this.panelRight.TabIndex = 1;
             // 
             // FrmMain
             // 
