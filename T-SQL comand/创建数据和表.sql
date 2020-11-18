@@ -119,7 +119,7 @@ update Teacher set TeacherName='张三',LoginPwd='654321' where TeacherId=10004
 
 select * from Teacher
 
-
+select TeacherName,TeacherId from Teacher where LoginAccount='abc1'and LoginPwd='1233'
 
 --添加课程分类
 

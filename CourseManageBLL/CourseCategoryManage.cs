@@ -14,7 +14,10 @@ namespace CourseManageBLL
     public class CourseCategoryManage
     {
         private CourseCategoryService categoryService = new CourseCategoryService();
-
+        /// <summary>
+        /// 查询全部课程分类
+        /// </summary>
+        /// <returns></returns>
         public List<CourseCategory> GetCourseCategories()
         {
             return categoryService.GetCourseCategories();

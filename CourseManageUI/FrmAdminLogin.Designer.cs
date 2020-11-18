@@ -72,7 +72,7 @@
             this.txtLoginPwd.Name = "txtLoginPwd";
             this.txtLoginPwd.Size = new System.Drawing.Size(100, 21);
             this.txtLoginPwd.TabIndex = 2;
-            this.txtLoginPwd.Text = "1233";
+            this.txtLoginPwd.Text = "123456";
             this.txtLoginPwd.UseSystemPasswordChar = true;
             // 
             // checkBox1

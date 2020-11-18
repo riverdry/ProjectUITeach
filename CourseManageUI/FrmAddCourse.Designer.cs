@@ -38,23 +38,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSaveToDB = new System.Windows.Forms.Button();
             this.groupBoxCourseInfo = new System.Windows.Forms.GroupBox();
-            this.ckbAutoClear = new System.Windows.Forms.CheckBox();
-            this.lblCourseName = new System.Windows.Forms.Label();
-            this.txtCourseName = new System.Windows.Forms.TextBox();
-            this.txtClassHour = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCredit = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtCourseContent = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbbCategory = new System.Windows.Forms.ComboBox();
+            this.txtCredit = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtClassHour = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCourseName = new System.Windows.Forms.TextBox();
+            this.lblCourseName = new System.Windows.Forms.Label();
+            this.ckbAutoClear = new System.Windows.Forms.CheckBox();
             this.dgvCourseList = new System.Windows.Forms.DataGridView();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxCourseInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +130,7 @@
             this.btnSaveToDB.Text = "保存到数据库";
             this.btnSaveToDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaveToDB.UseVisualStyleBackColor = false;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
             // 
             // groupBoxCourseInfo
             // 
@@ -151,50 +152,39 @@
             this.groupBoxCourseInfo.TabStop = false;
             this.groupBoxCourseInfo.Text = "[课程信息]";
             // 
-            // ckbAutoClear
+            // cbbCategory
             // 
-            this.ckbAutoClear.AutoSize = true;
-            this.ckbAutoClear.Location = new System.Drawing.Point(78, -1);
-            this.ckbAutoClear.Name = "ckbAutoClear";
-            this.ckbAutoClear.Size = new System.Drawing.Size(132, 16);
-            this.ckbAutoClear.TabIndex = 0;
-            this.ckbAutoClear.Text = "添加后自动清除文本";
-            this.ckbAutoClear.UseVisualStyleBackColor = true;
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(531, 91);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(121, 20);
+            this.cbbCategory.TabIndex = 13;
             // 
-            // lblCourseName
+            // label5
             // 
-            this.lblCourseName.AutoSize = true;
-            this.lblCourseName.Location = new System.Drawing.Point(7, 40);
-            this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(65, 12);
-            this.lblCourseName.TabIndex = 1;
-            this.lblCourseName.Text = "课程名称：";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(466, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "课程学分：";
             // 
-            // txtCourseName
+            // txtCourseContent
             // 
-            this.txtCourseName.Location = new System.Drawing.Point(69, 36);
-            this.txtCourseName.Name = "txtCourseName";
-            this.txtCourseName.Size = new System.Drawing.Size(209, 21);
-            this.txtCourseName.TabIndex = 5;
-            this.txtCourseName.Text = "测试名称";
+            this.txtCourseContent.Location = new System.Drawing.Point(69, 91);
+            this.txtCourseContent.Name = "txtCourseContent";
+            this.txtCourseContent.Size = new System.Drawing.Size(370, 21);
+            this.txtCourseContent.TabIndex = 11;
+            this.txtCourseContent.Text = "测试内容概述";
             // 
-            // txtClassHour
+            // label4
             // 
-            this.txtClassHour.Location = new System.Drawing.Point(364, 36);
-            this.txtClassHour.Name = "txtClassHour";
-            this.txtClassHour.Size = new System.Drawing.Size(75, 21);
-            this.txtClassHour.TabIndex = 7;
-            this.txtClassHour.Text = "50";
-            this.txtClassHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "课时总数：";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "课程名称：";
             // 
             // txtCredit
             // 
@@ -214,39 +204,50 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "课程学分：";
             // 
-            // txtCourseContent
+            // txtClassHour
             // 
-            this.txtCourseContent.Location = new System.Drawing.Point(69, 91);
-            this.txtCourseContent.Name = "txtCourseContent";
-            this.txtCourseContent.Size = new System.Drawing.Size(370, 21);
-            this.txtCourseContent.TabIndex = 11;
-            this.txtCourseContent.Text = "测试内容概述";
+            this.txtClassHour.Location = new System.Drawing.Point(364, 36);
+            this.txtClassHour.Name = "txtClassHour";
+            this.txtClassHour.Size = new System.Drawing.Size(75, 21);
+            this.txtClassHour.TabIndex = 7;
+            this.txtClassHour.Text = "50";
+            this.txtClassHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "课程名称：";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(302, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "课时总数：";
             // 
-            // label5
+            // txtCourseName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(466, 95);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "课程学分：";
+            this.txtCourseName.Location = new System.Drawing.Point(69, 36);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.Size = new System.Drawing.Size(209, 21);
+            this.txtCourseName.TabIndex = 5;
+            this.txtCourseName.Text = "测试名称";
             // 
-            // cbbCategory
+            // lblCourseName
             // 
-            this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.Location = new System.Drawing.Point(531, 91);
-            this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(121, 20);
-            this.cbbCategory.TabIndex = 13;
+            this.lblCourseName.AutoSize = true;
+            this.lblCourseName.Location = new System.Drawing.Point(7, 40);
+            this.lblCourseName.Name = "lblCourseName";
+            this.lblCourseName.Size = new System.Drawing.Size(65, 12);
+            this.lblCourseName.TabIndex = 1;
+            this.lblCourseName.Text = "课程名称：";
+            // 
+            // ckbAutoClear
+            // 
+            this.ckbAutoClear.AutoSize = true;
+            this.ckbAutoClear.Location = new System.Drawing.Point(78, -1);
+            this.ckbAutoClear.Name = "ckbAutoClear";
+            this.ckbAutoClear.Size = new System.Drawing.Size(132, 16);
+            this.ckbAutoClear.TabIndex = 0;
+            this.ckbAutoClear.Text = "添加后自动清除文本";
+            this.ckbAutoClear.UseVisualStyleBackColor = true;
             // 
             // dgvCourseList
             // 
@@ -271,7 +272,7 @@
             this.ClassHour,
             this.Credit,
             this.CourseContent,
-            this.Category});
+            this.CategoryName});
             this.dgvCourseList.EnableHeadersVisualStyles = false;
             this.dgvCourseList.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvCourseList.Location = new System.Drawing.Point(12, 206);
@@ -309,11 +310,11 @@
             this.CourseContent.HeaderText = "内容概述";
             this.CourseContent.Name = "CourseContent";
             // 
-            // Category
+            // CategoryName
             // 
-            this.Category.DataPropertyName = "Category";
-            this.Category.HeaderText = "课程分类";
-            this.Category.Name = "Category";
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "课程分类";
+            this.CategoryName.Name = "CategoryName";
             // 
             // FrmAddCourse
             // 
@@ -365,6 +366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassHour;
         private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseContent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
     }
 }

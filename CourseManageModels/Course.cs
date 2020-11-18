@@ -19,5 +19,8 @@ namespace CourseManageModels
         public int Credit { get; set; }
         public int CategoryId { get; set; }
         public int TeacherId { get; set; }
+        // 简单扩展实体属性
+        public string  CategoryName { get; set; }
+        public string TeacherName { get; set; }
     }
 }

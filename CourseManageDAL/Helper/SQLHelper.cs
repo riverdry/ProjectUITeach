@@ -25,7 +25,7 @@ namespace CourseManageDAL
             // using System.Data  对连接的数据库 执行T-SQL语句或存储过程
             SqlCommand cmd = new SqlCommand(sql, conn);
             // 判断是否存在sql参数数组，如果有 添加到SqlCommand中
-            if(sqlParameter == null)
+            if(sqlParameter != null)
             {
                 cmd.Parameters.AddRange(sqlParameter);
             }

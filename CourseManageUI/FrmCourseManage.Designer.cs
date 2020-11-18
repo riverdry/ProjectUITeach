@@ -37,11 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCourseName = new System.Windows.Forms.TextBox();
             this.dgvCourseList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.btnModifyCourse = new System.Windows.Forms.Button();
             this.btnDeleteCourse = new System.Windows.Forms.Button();
@@ -49,7 +44,7 @@
             this.btnQuery = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelModify = new System.Windows.Forms.Panel();
             this.btnCloseModify = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbCategory_Modify = new System.Windows.Forms.ComboBox();
@@ -71,10 +66,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassHour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelModify.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,6 +107,7 @@
             // 
             // cbbCategory
             // 
+            this.cbbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbCategory.FormattingEnabled = true;
             this.cbbCategory.Location = new System.Drawing.Point(72, 64);
             this.cbbCategory.Name = "cbbCategory";
@@ -146,55 +146,20 @@
             this.dgvCourseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCourseList.ColumnHeadersHeight = 30;
             this.dgvCourseList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.CourseName,
+            this.ClassHour,
+            this.Credit,
+            this.CourseContent,
+            this.TeacherName});
             this.dgvCourseList.EnableHeadersVisualStyles = false;
             this.dgvCourseList.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dgvCourseList.Location = new System.Drawing.Point(12, 101);
             this.dgvCourseList.Name = "dgvCourseList";
             this.dgvCourseList.ReadOnly = true;
             this.dgvCourseList.RowTemplate.Height = 23;
+            this.dgvCourseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCourseList.Size = new System.Drawing.Size(664, 367);
             this.dgvCourseList.TabIndex = 5;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 150F;
-            this.Column1.HeaderText = "课程名称";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 80F;
-            this.Column2.HeaderText = "课时";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "学分";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "内容概述";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "课程讲师";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // btnAddCourse
             // 
@@ -229,6 +194,7 @@
             this.btnModifyCourse.Text = "修改课程";
             this.btnModifyCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModifyCourse.UseVisualStyleBackColor = false;
+            this.btnModifyCourse.Click += new System.EventHandler(this.btnModifyCourse_Click);
             // 
             // btnDeleteCourse
             // 
@@ -280,6 +246,7 @@
             this.btnQuery.Text = "提交查询";
             this.btnQuery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // label5
             // 
@@ -300,23 +267,23 @@
             this.lblCount.TabIndex = 7;
             this.lblCount.Text = "0";
             // 
-            // panel1
+            // panelModify
             // 
-            this.panel1.Controls.Add(this.btnCloseModify);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.lblCourseId);
-            this.panel1.Controls.Add(this.btnSaveToDB);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Location = new System.Drawing.Point(0, 294);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 189);
-            this.panel1.TabIndex = 8;
+            this.panelModify.Controls.Add(this.btnCloseModify);
+            this.panelModify.Controls.Add(this.groupBox1);
+            this.panelModify.Controls.Add(this.label6);
+            this.panelModify.Controls.Add(this.textBox7);
+            this.panelModify.Controls.Add(this.textBox6);
+            this.panelModify.Controls.Add(this.lblCourseId);
+            this.panelModify.Controls.Add(this.btnSaveToDB);
+            this.panelModify.Controls.Add(this.textBox5);
+            this.panelModify.Controls.Add(this.label13);
+            this.panelModify.Controls.Add(this.label14);
+            this.panelModify.Controls.Add(this.label15);
+            this.panelModify.Location = new System.Drawing.Point(1, 288);
+            this.panelModify.Name = "panelModify";
+            this.panelModify.Size = new System.Drawing.Size(690, 189);
+            this.panelModify.TabIndex = 8;
             // 
             // btnCloseModify
             // 
@@ -519,22 +486,46 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "课程学分：";
             // 
-            // button2
+            // CourseName
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(163)))), ((int)(((byte)(220)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(382, 453);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.button2.Size = new System.Drawing.Size(90, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "修改课程";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.CourseName.DataPropertyName = "CourseName";
+            this.CourseName.FillWeight = 150F;
+            this.CourseName.HeaderText = "课程名称";
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            this.CourseName.Width = 150;
+            // 
+            // ClassHour
+            // 
+            this.ClassHour.DataPropertyName = "ClassHour";
+            this.ClassHour.FillWeight = 80F;
+            this.ClassHour.HeaderText = "课时";
+            this.ClassHour.Name = "ClassHour";
+            this.ClassHour.ReadOnly = true;
+            this.ClassHour.Width = 80;
+            // 
+            // Credit
+            // 
+            this.Credit.DataPropertyName = "Credit";
+            this.Credit.HeaderText = "学分";
+            this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
+            this.Credit.Width = 80;
+            // 
+            // CourseContent
+            // 
+            this.CourseContent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CourseContent.DataPropertyName = "CourseContent";
+            this.CourseContent.HeaderText = "内容概述";
+            this.CourseContent.Name = "CourseContent";
+            this.CourseContent.ReadOnly = true;
+            // 
+            // TeacherName
+            // 
+            this.TeacherName.DataPropertyName = "TeacherName";
+            this.TeacherName.HeaderText = "课程讲师";
+            this.TeacherName.Name = "TeacherName";
+            this.TeacherName.ReadOnly = true;
             // 
             // FrmCourseManage
             // 
@@ -542,12 +533,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(690, 480);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelModify);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDeleteCourse);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnModifyCourse);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.btnAddCourse);
@@ -562,8 +552,8 @@
             this.Name = "FrmCourseManage";
             this.Text = "FrmCourseManage";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelModify.ResumeLayout(false);
+            this.panelModify.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -587,12 +577,7 @@
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelModify;
         private System.Windows.Forms.Button btnCloseModify;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbbCategory_Modify;
@@ -614,7 +599,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassHour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseContent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
     }
 }
