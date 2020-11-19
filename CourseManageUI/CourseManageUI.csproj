@@ -70,6 +70,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifyPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifyPwd.Designer.cs">
+      <DependentUpon>FrmModifyPwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAddCourse.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifyPwd.resx">
+      <DependentUpon>FrmModifyPwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +119,10 @@
     <ProjectReference Include="..\CourseManageBLL\CourseManageBLL.csproj">
       <Project>{2568890d-143f-4ce5-a26d-e3e2e59d225b}</Project>
       <Name>CourseManageBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CourseManageDAL\CourseManageDAL.csproj">
+      <Project>{96EA5C59-B538-4024-A35B-79548348F80C}</Project>
+      <Name>CourseManageDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CourseManageModels\CourseManageModels.csproj">
       <Project>{c3ebe8d7-9a22-4d3f-8633-496dae95ef0f}</Project>

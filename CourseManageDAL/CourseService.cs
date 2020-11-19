@@ -102,7 +102,7 @@ namespace CourseManageDAL
             // 封装sql语句参数
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
-                new SqlParameter("@CourseContetnt",course.CourseContent),
+                new SqlParameter("@CourseContent",course.CourseContent),
                 new SqlParameter("@CourseName",course.CourseName),
                 new SqlParameter("@ClassHour",course.ClassHour),
                 new SqlParameter("@Credit",course.Credit),
@@ -111,6 +111,20 @@ namespace CourseManageDAL
             
             };
             return SQLHelper.Update(sql, sqlParameters);
+        }
+        #endregion
+
+        #region 删除课程
+        /// <summary>
+        /// 删除课程对象
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns></returns>
+        public int DeleteCourse(Course course)
+        {
+            string sql = "delete from Course where CourseId=" + course.CourseId;
+
+            return SQLHelper.Update(sql);
         }
         #endregion
 

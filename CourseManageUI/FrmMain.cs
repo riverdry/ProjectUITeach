@@ -89,5 +89,10 @@ namespace CourseManageUI
         {
             OpenForm(new FrmCourseManage());// 创建子窗体
         }
+
+        private void btnModifyPwd_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmModifyPwd());// 创建子窗体
+        }
     }
 }

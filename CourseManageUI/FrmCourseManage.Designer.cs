@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCourseManage));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,12 +47,10 @@
             this.panelModify = new System.Windows.Forms.Panel();
             this.btnCloseModify = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbbCategory_Modify = new System.Windows.Forms.ComboBox();
             this.txtCourseContent_Modify = new System.Windows.Forms.TextBox();
             this.txtCourseCredit_Modify = new System.Windows.Forms.TextBox();
             this.txtCourseHour_Modify = new System.Windows.Forms.TextBox();
             this.txtCourseName_Modify = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,6 +70,9 @@
             this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseContent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbbCategory_Modify = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourseList)).BeginInit();
             this.panelModify.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,21 +137,22 @@
             this.dgvCourseList.AllowUserToDeleteRows = false;
             this.dgvCourseList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvCourseList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCourseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCourseList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCourseList.ColumnHeadersHeight = 30;
             this.dgvCourseList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CourseName,
             this.ClassHour,
             this.Credit,
             this.CourseContent,
-            this.TeacherName});
+            this.TeacherName,
+            this.CourseId});
             this.dgvCourseList.EnableHeadersVisualStyles = false;
             this.dgvCourseList.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dgvCourseList.Location = new System.Drawing.Point(12, 101);
@@ -212,6 +214,7 @@
             this.btnDeleteCourse.Text = "删除课程";
             this.btnDeleteCourse.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteCourse.UseVisualStyleBackColor = false;
+            this.btnDeleteCourse.Click += new System.EventHandler(this.btnDeleteCourse_Click);
             // 
             // btnClose
             // 
@@ -229,6 +232,7 @@
             this.btnClose.Text = "关闭窗口";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnQuery
             // 
@@ -305,11 +309,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbbCategory_Modify);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtCourseContent_Modify);
             this.groupBox1.Controls.Add(this.txtCourseCredit_Modify);
             this.groupBox1.Controls.Add(this.txtCourseHour_Modify);
             this.groupBox1.Controls.Add(this.txtCourseName_Modify);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label9);
@@ -321,17 +325,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "[课程信息]";
             // 
-            // cbbCategory_Modify
-            // 
-            this.cbbCategory_Modify.FormattingEnabled = true;
-            this.cbbCategory_Modify.Location = new System.Drawing.Point(555, 74);
-            this.cbbCategory_Modify.Name = "cbbCategory_Modify";
-            this.cbbCategory_Modify.Size = new System.Drawing.Size(92, 20);
-            this.cbbCategory_Modify.TabIndex = 9;
-            // 
             // txtCourseContent_Modify
             // 
-            this.txtCourseContent_Modify.Location = new System.Drawing.Point(79, 74);
+            this.txtCourseContent_Modify.Location = new System.Drawing.Point(79, 76);
             this.txtCourseContent_Modify.Name = "txtCourseContent_Modify";
             this.txtCourseContent_Modify.Size = new System.Drawing.Size(412, 21);
             this.txtCourseContent_Modify.TabIndex = 8;
@@ -357,15 +353,6 @@
             this.txtCourseName_Modify.Size = new System.Drawing.Size(276, 21);
             this.txtCourseName_Modify.TabIndex = 5;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(497, 78);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 12);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "课程分类：";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -378,7 +365,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 78);
+            this.label11.Location = new System.Drawing.Point(22, 80);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 0;
@@ -451,6 +438,7 @@
             this.btnSaveToDB.Text = "保存修改";
             this.btnSaveToDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaveToDB.UseVisualStyleBackColor = false;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
             // 
             // textBox5
             // 
@@ -527,6 +515,32 @@
             this.TeacherName.Name = "TeacherName";
             this.TeacherName.ReadOnly = true;
             // 
+            // CourseId
+            // 
+            this.CourseId.DataPropertyName = "CourseId";
+            this.CourseId.HeaderText = "CourseId";
+            this.CourseId.Name = "CourseId";
+            this.CourseId.ReadOnly = true;
+            this.CourseId.Visible = false;
+            // 
+            // cbbCategory_Modify
+            // 
+            this.cbbCategory_Modify.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbCategory_Modify.FormattingEnabled = true;
+            this.cbbCategory_Modify.Location = new System.Drawing.Point(555, 76);
+            this.cbbCategory_Modify.Name = "cbbCategory_Modify";
+            this.cbbCategory_Modify.Size = new System.Drawing.Size(92, 20);
+            this.cbbCategory_Modify.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(497, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 12);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "课程分类：";
+            // 
             // FrmCourseManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -580,12 +594,10 @@
         private System.Windows.Forms.Panel panelModify;
         private System.Windows.Forms.Button btnCloseModify;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbbCategory_Modify;
         private System.Windows.Forms.TextBox txtCourseContent_Modify;
         private System.Windows.Forms.TextBox txtCourseCredit_Modify;
         private System.Windows.Forms.TextBox txtCourseHour_Modify;
         private System.Windows.Forms.TextBox txtCourseName_Modify;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
@@ -605,5 +617,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseContent;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseId;
+        private System.Windows.Forms.ComboBox cbbCategory_Modify;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -22,5 +22,14 @@ namespace CourseManageBLL
 
             return teacher;
         }
+        /// <summary>
+        /// 修改登录密码
+        /// </summary>
+        /// <param name="teacher"></param>
+        /// <returns></returns>
+        public int ModifyPwd(Teacher teacher)
+        {
+            return teacherService.ModifyPwd(teacher);
+        }
     }
 }

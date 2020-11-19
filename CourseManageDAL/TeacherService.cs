@@ -34,5 +34,22 @@ namespace CourseManageDAL
             reader.Close();
             return teacher;
         }
+        /// <summary>
+        /// 修改登录密码
+        /// </summary>
+        /// <param name="teacher"></param>
+        /// <returns></returns>
+        public int ModifyPwd(Teacher teacher)
+        {
+            string sql = "update Teacher set LoginPwd = @LoginPwd where TeacherId=@TeacherId";
+
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+           new SqlParameter("@LoginPwd",teacher.LoginPwd),
+           new SqlParameter("@TeacherId",teacher.TeacherId),
+            };
+            return SQLHelper.Update(sql, sqlParameters);
+        }
     }
 }
+    

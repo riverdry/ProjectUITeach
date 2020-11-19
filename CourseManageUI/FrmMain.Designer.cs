@@ -118,6 +118,7 @@
             this.btnModifyPwd.Text = "更改登录密码";
             this.btnModifyPwd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModifyPwd.UseVisualStyleBackColor = false;
+            this.btnModifyPwd.Click += new System.EventHandler(this.btnModifyPwd_Click);
             // 
             // btnTeacherManage
             // 

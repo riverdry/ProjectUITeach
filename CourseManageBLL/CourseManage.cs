@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CourseManageDAL;
+﻿using CourseManageDAL;
 using CourseManageModels;
+using System.Collections.Generic;
 
 namespace CourseManageBLL //命名空间
 {
@@ -37,5 +33,15 @@ namespace CourseManageBLL //命名空间
         {
             return courseService.ModifyCourse(course);
         }
+        /// <summary>
+        /// 删除课程对象
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns></returns>
+        public int DeleteCourse(Course course)
+        {
+            return courseService.DeleteCourse(course);
+        }
+
     }
 }
